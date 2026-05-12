@@ -1,10 +1,10 @@
 resource "aws_autoscaling_group" "this" {
-  desired_capacity     = 2
-  max_size             = 3
-  min_size             = 1
+  desired_capacity  = 2
+  max_size          = 3
+  min_size          = 1
   target_group_arns = [var.tg_arn]
 
-  vpc_zone_identifier  = var.subnets
+  vpc_zone_identifier = var.subnets
   launch_template {
     id      = var.lt_id
     version = "$Latest"
